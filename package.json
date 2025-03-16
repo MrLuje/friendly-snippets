@@ -189,7 +189,7 @@
                 "path": "./snippets/systemverilog.json"
             },
             {
-                "language": ["shellscript", "shell", "sh", "zsh"],
+                "language": ["just", "shellscript", "shell", "sh", "zsh"],
                 "path": "./snippets/shell/shell.json"
             },
             {
@@ -584,14 +584,18 @@
                  "language": "loremipsum",
                  "path": "./snippets/loremipsum.json"
             },
-	    {
-		"language": "cmake",
-		"path": "./snippets/cmake.json"
-	    },
-            {
-                 "language": "zig",
-                 "path": "./snippets/zig.json"
-            }
+		    {
+			"language": "cmake",
+			"path": "./snippets/cmake.json"
+		    },
+			{
+				 "language": "zig",
+				 "path": "./snippets/zig.json"
+			},
+		    {
+				"language": "just",
+				"path": "./snippets/justfile.json"
+			}
         ]
     }
 }
