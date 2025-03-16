@@ -76,5 +76,11 @@
         "prefix": "expr",
         "body": "expr ${0:1 + 1}",
         "description": "Calculate numbers with Bash."
-    }
+    },
+    "shebang": {
+		"prefix": "shebang",
+		"body": [
+			"#!/usr/bin/env bash"
+		]
+	}
 }
