@@ -468,5 +468,97 @@
             "---",
             "$0"
         ]
+    },
+    "k8s ServiceAccount": {
+        "prefix": "k-serviceaccount",
+        "description": "k8s ServiceAccount",
+        "body": [
+            "# https://kubernetes.io/docs/concepts/security/service-accounts/",
+            "apiVersion: v1",
+            "kind: ServiceAccount",
+            "metadata:",
+            "  name: ${1:myserviceaccount}",
+            "  namespace: ${2:default}",
+            "---",
+            "$0"
+        ]
+    },
+    "k8s Role": {
+        "prefix": "k-role",
+        "description": "k8s Role",
+        "body": [
+            "# https://kubernetes.io/docs/concepts/security/rbac/",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "kind: Role",
+            "metadata:",
+            "  name: ${1:myrole}",
+            "  namespace: ${2:default}",
+            "rules:",
+            "- apiGroups: [\"${3:}\"]",
+            "  resources: [\"${4:pods}\"]",
+            "  verbs: [\"${5|get,list,watch,create,update,patch,delete|}\"]",
+            "---",
+            "$0"
+        ]
+    },
+    "k8s RoleBinding": {
+        "prefix": "k-rolebinding",
+        "description": "k8s RoleBinding",
+        "body": [
+            "# https://kubernetes.io/docs/concepts/security/rbac/",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "kind: RoleBinding",
+            "metadata:",
+            "  name: ${1:myrolebinding}",
+            "  namespace: ${2:default}",
+            "roleRef:",
+            "  apiGroup: rbac.authorization.k8s.io",
+            "  kind: Role",
+            "  name: ${3:myrole}",
+            "subjects:",
+            "- kind: ServiceAccount",
+            "  name: ${4:myserviceaccount}",
+            "  namespace: ${2:default}",
+            "---",
+            "$0"
+        ]
+    },
+    "k8s ClusterRole": {
+        "prefix": "k-clusterrole",
+        "description": "k8s ClusterRole",
+        "body": [
+            "# https://kubernetes.io/docs/concepts/security/rbac/",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "kind: ClusterRole",
+            "metadata:",
+            "  name: ${1:myclusterrole}",
+            "rules:",
+            "- apiGroups: [\"${2:}\"]",
+            "  resources: [\"${3:pods}\"]",
+            "  verbs: [\"${4|get,list,watch,create,update,patch,delete|}\"]",
+            "---",
+            "$0"
+        ]
+    },
+    "k8s ClusterRoleBinding": {
+        "prefix": "k-clusterrolebinding",
+        "description": "k8s ClusterRoleBinding",
+        "body": [
+            "# https://kubernetes.io/docs/concepts/security/rbac/",
+            "apiVersion: rbac.authorization.k8s.io/v1",
+            "kind: ClusterRoleBinding",
+            "metadata:",
+            "  name: ${1:myclusterrolebinding}",
+            "roleRef:",
+            "  apiGroup: rbac.authorization.k8s.io",
+            "  kind: ClusterRole",
+            "  name: ${2:myclusterrole}",
+            "subjects:",
+            "- kind: ServiceAccount",
+            "  name: ${3:myserviceaccount}",
+            "  namespace: ${4:default}",
+            "---",
+            "$0"
+        ]
     }
 }
