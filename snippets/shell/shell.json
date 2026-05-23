@@ -28,6 +28,7 @@
         "prefix": "then",
         "body": "then\n\t${0}\nfi",
         "description": "Finish an IF statement."
+
     },
     "for_in": {
         "prefix": "for_in",
