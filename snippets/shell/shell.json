@@ -24,6 +24,11 @@
         "body": "else\n\t${0:command}",
         "description": "else"
     },
+    "then": {
+        "prefix": "then",
+        "body": "then\n\t${0}\nfi",
+        "description": "Finish an IF statement."
+    },
     "for_in": {
         "prefix": "for_in",
         "body": "for ${1:VAR} in ${0:LIST}\ndo\n\techo \"\\$${1:VAR}\"\ndone\n",
