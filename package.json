@@ -599,6 +599,14 @@
 		    {
 				"language": "just",
 				"path": "./snippets/justfile.json"
+			},
+			{
+				"language": "json.launch",
+				"path": "./snippets/vscode/launch.json"
+			},
+			{
+				"language": "json.tasks",
+				"path": "./snippets/vscode/tasks.json"
 			}
         ]
     }

@@ -1,0 +1,22 @@
+{
+  "VS Code tasks.json Scaffolder": {
+    "prefix": "tasksjson",
+    "body": [
+      "{",
+      "  \"version\": \"2.0.0\",",
+      "  \"tasks\": [",
+      "    {",
+      "      \"label\": \"${1:Build project}\",",
+      "      \"type\": \"shell\",",
+      "      \"command\": \"${2:make}\",",
+      "      \"group\": {",
+      "        \"kind\": \"build\",",
+      "        \"isDefault\": true",
+      "      }",
+      "    }",
+      "  ]",
+      "}"
+    ],
+    "description": "Generate a VS Code tasks.json file"
+  }
+}

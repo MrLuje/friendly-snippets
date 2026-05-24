@@ -1,0 +1,21 @@
+{
+  "VS Code launch.json Scaffolder": {
+    "prefix": "launchjson",
+    "body": [
+      "{",
+      "  \"\\$schema\": \"https://codeberg.org/mfussenegger/dapconfig-schema/raw/branch/master/dapconfig-schema.json\",",
+      "  \"version\": \"0.2.0\",",
+      "  \"configurations\": [",
+      "    {",
+      "      \"name\": \"${1:Launch Program}\",",
+      "      \"type\": \"${2|python,go,node,codelldb,bashdb|}\",",
+      "      \"request\": \"launch\",",
+      "      \"program\": \"\\${file}\",",
+      "      \"cwd\": \"\\${workspaceFolder}\"",
+      "    }",
+      "  ]",
+      "}"
+    ],
+    "description": "Generate a VS Code launch.json file"
+  }
+}
